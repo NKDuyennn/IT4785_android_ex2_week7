@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE">
+
+    <!-- Header -->
+    <View
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="#212121"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:src="@android:drawable/ic_dialog_info"
+        app:tint="#EEEEEE"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/header" />
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="LifeCycle"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintStart_toEndOf="@id/logo"
+        app:layout_constraintTop_toTopOf="@id/header" />
+
+    <!-- ScrollView for scrollable content -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp">
+
+            <!-- First Name Label -->
+            <TextView
+                android:id="@+id/firstNameLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="First Name"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/lastNameLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Last Name Label -->
+            <TextView
+                android:id="@+id/lastNameLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="Last Name"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/firstNameLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/firstNameLabel" />
+
+            <!-- First Name Input -->
+            <EditText
+                android:id="@+id/firstNameInput"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="#FFFFFF"
+                android:hint="First Name"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textColorHint="#999999"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/lastNameInput"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstNameLabel" />
+
+            <!-- Last Name Input -->
+            <EditText
+                android:id="@+id/lastNameInput"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="#FFFFFF"
+                android:hint="Last Name"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textColorHint="#999999"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/firstNameInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/firstNameInput" />
+
+            <!-- Gender Label -->
+            <TextView
+                android:id="@+id/genderLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Gender"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstNameInput" />
+
+            <!-- Male Radio Button -->
+            <RadioButton
+                android:id="@+id/maleRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:gravity="center_vertical"
+                android:minHeight="48dp"
+                android:text="Male"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/genderLabel"
+                app:layout_constraintStart_toEndOf="@id/genderLabel" />
+
+            <!-- Female Radio Button -->
+            <RadioButton
+                android:id="@+id/femaleRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:minHeight="48dp"
+                android:text="Female"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/maleRadio"
+                app:layout_constraintStart_toEndOf="@id/maleRadio" />
+
+            <!-- Birthday Label -->
+            <TextView
+                android:id="@+id/birthdayLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Birthday"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/genderLabel" />
+
+            <!-- Birthday Input -->
+            <EditText
+                android:id="@+id/birthdayInput"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="#FFFFFF"
+                android:hint="Birthday"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textColorHint="#999999"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/selectButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/birthdayLabel" />
+
+            <!-- Select Button -->
+            <Button
+                android:id="@+id/selectButton"
+                android:layout_width="80dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
+                android:background="#CCCCCC"
+                android:text="Select"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/birthdayInput"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- CardView chứa CalendarView -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCalendar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:visibility="gone"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/birthdayInput">
+
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Address Label -->
+            <TextView
+                android:id="@+id/addressLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Address"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardCalendar" />
+
+            <!-- Address Input -->
+            <EditText
+                android:id="@+id/addressInput"
+                android:layout_width="0dp"
+                android:layout_height="72dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="#FFFFFF"
+                android:gravity="top|start"
+                android:hint="Address"
+                android:paddingStart="12dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="12dp"
+                android:textColorHint="#999999"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressLabel" />
+
+            <!-- Email Label -->
+            <TextView
+                android:id="@+id/emailLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Email"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressInput" />
+
+            <!-- Email Input -->
+            <EditText
+                android:id="@+id/emailInput"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="#FFFFFF"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textColorHint="#999999"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emailLabel" />
+
+            <!-- Terms Checkbox -->
+            <CheckBox
+                android:id="@+id/termsCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:minHeight="48dp"
+                android:text="I agree to Terms of Use"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emailInput" />
+
+            <!-- Register Button -->
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="160dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:background="#CCCCCC"
+                android:text="Register"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/termsCheckbox" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
